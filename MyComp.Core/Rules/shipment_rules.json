@@ -1,0 +1,59 @@
+﻿[
+  {
+    "WorkflowName": "ShipmentCharges",
+    "Rules": [
+      {
+        "RuleName": "CalculateBase",
+        "Expression": "input1.WeightKg > 0 AND input1.DistanceKm > 0",
+        "RuleExpressionType": "LambdaExpression",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "(input1.WeightKg * 5) + (input1.DistanceKm * 2)"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "ExpressSurcharge",
+        "Expression": "input1.IsExpress == true",
+        "RuleExpressionType": "LambdaExpression",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "input2.BaseCharge * 0.1"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "FragileSurcharge",
+        "Expression": "input1.IsFragile == true",
+        "RuleExpressionType": "LambdaExpression",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "150"
+            }
+          }
+        }
+      },
+      {
+        "RuleName": "ClientDiscount",
+        "Expression": "true",
+        "RuleExpressionType": "LambdaExpression",
+        "Actions": {
+          "OnSuccess": {
+            "Name": "OutputExpression",
+            "Context": {
+              "Expression": "input1.ClientCategory == 3 ? (input2.BaseCharge + input2.Surcharge) * 0.15 : input1.ClientCategory == 2 ? (input2.BaseCharge + input2.Surcharge) * 0.10 : input1.ClientCategory == 1 ? (input2.BaseCharge + input2.Surcharge) * 0.05 : 0"
+            }
+          }
+        }
+      }
+    ]
+  }
+]

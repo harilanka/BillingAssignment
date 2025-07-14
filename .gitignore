@@ -52,3 +52,9 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+.vs/MyComp.Assignment/xs/**
+MyComp.Core/.vs/MyComp.Assignment/xs/project-cache/MyComp.TestHarness-Debug.json
+MyComp.Core/.vs/MyComp.Assignment/xs/project-cache/MyComp.Assignment-Debug.json
+MyComp.Core/.vs/MyComp.Assignment/xs/project-cache/MyComp.Assignment.Tests-Debug.json
+MyComp.Core/.vs/MyComp.Assignment/xs/project-cache/MyComp.Core-Debug.json
+MyComp.Core/.vs/MyComp.Assignment/xs/UserPrefs.xml
