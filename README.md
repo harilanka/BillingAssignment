@@ -18,7 +18,7 @@ This project leverages the **Microsoft Rules Engine** to interpret business rule
 - **Time taken:** ~2 hours to integrate the Microsoft JSON-based rules engine.
 - Rulesets can be stored in a database in the future, enabling updates by modifying a single row.
 - Followed simple and best-practice design strategies.
-- Unit tests are included.
+- Unit tests can be included in future if required.
 
 ---
 
