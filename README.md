@@ -27,6 +27,7 @@ This project leverages the **Microsoft Rules Engine** to interpret business rule
 - Singleton on the JSON Serializer can be implemented and can leverage DI.
 - Better FluentValidations would help in validating Models
 - This solution doesnt follow 100% DDD (Domain Driven Design) since its a simple use case. If a real logistics solution is implemented, a better way to implement would be a Domain layer that will have entities and their sets linked with multple bounded contexts, Application layer will have all the business logic and presentation layer will have basic DTO operations and some input validations and transformations. This can be nearer step for Clean Architecture.
+- Caching of rules can improve performance instead of everytime reading from disc
 
 ---
 
